@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import Video from '../video/coding.mp4';
 import '../styles/header.css';
@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,15 +23,18 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    backgroundColor: 'rgba(0, 0, 0, 0.7)'
   },
   title: {
-    paddingBottom: theme.spacing(1)
+    paddingBottom: theme.spacing(1),
+    fontWeight: '600',
+    fontSize: '5rem'
   }
 }));
 
 const Hero = () => {
   const classes = useStyles();
+  const [hover, setHover] = useState(false);
   return (
     <header className={classes.root}>
       <ReactPlayer url={Video} playing loop muted width="100%" height="100%" />
@@ -43,15 +47,41 @@ const Hero = () => {
           alignItems="center"
           color="#fff"
         >
-          <Typography variant="h3" component="h1" className={classes.title}>
-            Nice to meet you!
+          <Typography
+            variant="h3"
+            component="h1"
+            className={classes.title}
+            onMouseOver={() => setHover(true)}
+            onMouseOut={() => setHover(false)}
+          >
+            {hover ? (
+              <Link href="about" underline="none" color="primary">
+                About
+              </Link>
+            ) : (
+              <span>
+                Hello there!<span className="wave">👋</span>
+              </span>
+            )}
           </Typography>
-          <Typography variant="h3" component="h1" className={classes.title}>
-            I'm Matt.
+          <Typography
+            variant="h3"
+            component="h1"
+            className={classes.title}
+            onMouseOver={() => setHover(true)}
+            onMouseOut={() => setHover(false)}
+          >
+            {hover ? (
+              <Link href="about" underline="none" color="primary">
+                Projects
+              </Link>
+            ) : (
+              <span>I'm Matt.</span>
+            )}
           </Typography>
-          <Button color="primary" variant="contained">
+          {/* <Button color="primary" variant="contained">
             Click Me
-          </Button>
+          </Button> */}
         </Box>
       </div>
     </header>
