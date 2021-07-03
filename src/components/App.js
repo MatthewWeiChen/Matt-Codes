@@ -2,8 +2,10 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import Hero from './hero';
 import About from './about-me';
+import {Switch, Route} from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -12,6 +14,9 @@ const theme = createMuiTheme({
     },
     primary: {
       main: '#84DCC6',
+    },
+    secondary: {
+      main: '#FFFFFF'
     }
   }
 })
@@ -25,9 +30,16 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline/>
-    <div className="App">
-      <Hero aboutClick={handleAboutClick}/>
-    </div>
+      <Switch>
+        <Route exact path ='/'>
+          <div className="App">
+           <Hero aboutClick={handleAboutClick}/>
+          </div>
+      </Route>
+      <Route exact path ='/about'>
+        <About/>
+      </Route>
+    </Switch>
     </MuiThemeProvider>
   );
 }
