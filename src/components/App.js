@@ -18,7 +18,8 @@ const theme = createMuiTheme({
     secondary: {
       main: '#FFFFFF'
     }
-  }
+  },
+  spacing:8
 })
 
 function App() {

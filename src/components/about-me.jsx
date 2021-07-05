@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '600',
     fontSize: '5rem',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '3rem'
+      fontSize: '3rem',
+      position: 'left'
     }
   },
   imageControl: {
@@ -27,11 +28,26 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8)
   },
   aboutParagraph: {
-    fontSize: '2rem',
+    fontSize: '16px',
     fontWeight: '400',
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {
-      fontSize: '20px'
+      fontSize: '16px'
+    }
+  },
+  aboutBox: {
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      marginLeft: '10px',
+      padding: '5px'
+    }
+  },
+  gridContainer: {
+    justify: 'center',
+    alightItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      alignItems: 'flex-start',
+      justify: 'flex-start'
     }
   }
 }));
@@ -40,12 +56,7 @@ const About = () => {
   const classes = useStyles();
   return (
     <>
-      <Grid
-        container
-        direction="column"
-        justifycontent="center"
-        alignItems="center"
-      >
+      <Grid container alignItems="center" direction="column">
         <Box m={8}>
           <Typography
             variant="h2"
@@ -59,12 +70,12 @@ const About = () => {
           <Image
             alt="Matt Chen"
             src={Me}
-            cover="true"
+            cover={true}
             color="#222222"
             className={classes.imageControl}
           />
         </Box>
-        <Box>
+        <Box mr={4} className={classes.aboutBox}>
           <Typography className={classes.aboutTitle} color="secondary">
             About
           </Typography>
@@ -73,7 +84,32 @@ const About = () => {
             className={classes.aboutParagraph}
             color="secondary"
           >
-            I am a software engineer
+            Hi, I'm Matt Chen and I am a software engineer. I have professional
+            experience working with Vue.js, React.js, PHP, Node.js, MySQL and
+            many more. I love to build creative designs with clean efficient
+            code on the front and back end.
+          </Typography>
+          <Typography
+            component="p"
+            className={classes.aboutParagraph}
+            color="secondary"
+          >
+            I have a diverse background of working in customer service,
+            construction foreman, and non-profit volunteer. Although I didn't
+            start my career path with programming I firmly believe that there is
+            no straight path to the dream profession. From everything I have
+            learned in the past I put that in my code as a living breathing
+            entity.
+          </Typography>
+          <Typography
+            component="p"
+            className={classes.aboutParagraph}
+            color="secondary"
+          >
+            However, I don't define myself just by my profession. I define
+            myself by my passion, high propensity to learn quickly and desire to
+            always better myself. Outside of coding, you can find me collecting
+            Pokemon cards, watching anime or hiking.
           </Typography>
         </Box>
       </Grid>
