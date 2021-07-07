@@ -109,7 +109,7 @@ const About = () => {
             However, I don't define myself just by my profession. I define
             myself by my passion, high propensity to learn quickly and desire to
             always better myself. Outside of coding, you can find me collecting
-            Pokemon cards, watching anime or hiking.
+            Pokemon cards, watching anime or hiking. Love
           </Typography>
         </Box>
       </Grid>
