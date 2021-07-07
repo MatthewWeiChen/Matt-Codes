@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   aboutParagraph: {
     fontSize: '16px',
     fontWeight: '400',
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
       fontSize: '16px'
     }
@@ -40,7 +40,8 @@ const useStyles = makeStyles(theme => ({
       width: '100%',
       marginLeft: '10px',
       padding: '5px'
-    }
+    },
+    width: '70%'
   },
   gridContainer: {
     justify: 'center',
@@ -75,7 +76,7 @@ const About = () => {
             className={classes.imageControl}
           />
         </Box>
-        <Box mr={4} className={classes.aboutBox}>
+        <Box ml={4} className={classes.aboutBox}>
           <Typography className={classes.aboutTitle} color="secondary">
             About
           </Typography>

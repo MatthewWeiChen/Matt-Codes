@@ -29,6 +29,17 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(1),
     fontWeight: '600',
     fontSize: '5rem'
+  },
+  slideUp: {
+    animation: 'slideUp 0.9s cubic-bezier(0.65, 0, 0.35, 1) both'
+  },
+  '@keyframes slideUp': {
+    '0%': {
+      transform: 'translateY(100px)'
+    },
+    '100%': {
+      transform: 'translateY(0)'
+    }
   }
 }));
 
@@ -59,7 +70,7 @@ const Hero = () => {
                 About
               </Link>
             ) : (
-              <span>
+              <span className={classes.slideUp}>
                 Hello there!<span className="wave">👋</span>
               </span>
             )}
