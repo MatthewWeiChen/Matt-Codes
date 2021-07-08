@@ -2,6 +2,7 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import Hero from './hero';
 import About from './about-me';
+import Projects from './projects';
 import {Switch, Route} from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -39,6 +40,9 @@ function App() {
       </Route>
       <Route exact path ='/about'>
         <About/>
+      </Route>
+      <Route exact path ='/projects'>
+        <Projects/>
       </Route>
     </Switch>
     </MuiThemeProvider>

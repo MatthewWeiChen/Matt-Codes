@@ -83,7 +83,7 @@ const Hero = () => {
             onMouseOut={() => setHover(false)}
           >
             {hover ? (
-              <Link href="about" underline="none" color="primary">
+              <Link href="projects" underline="none" color="primary">
                 Projects
               </Link>
             ) : (
